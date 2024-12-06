@@ -1,0 +1,140 @@
+body, h1, h3, p, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* background-color: #f5f5f5; */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #666;
+
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+
+    text-align: justify;
+    text-align-last: center;
+
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+p i {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #007BFF;
+    padding: 8px 12px;
+    border: 1px solid #007BFF;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    background-color: #007BFF;
+    color: #ffffff;
+}
+
+iframe {
+    z-index: 1; 
+    position: relative; 
+    /* the above portion just sets the iframe above everything else*/
+
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.backgroundProject1 {
+    background-image: url('Images/1.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    backdrop-filter: blur(5px);
+}
+
+.backgroundProject2 {
+    background-image: url('Images/2.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    backdrop-filter: blur(5px);
+}
+
+.backgroundProject3 {
+    background-image: url('Images/3.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    backdrop-filter: blur(5px);
+}
+
+.backgroundProject4 {
+    background-image: url('Images/4.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    backdrop-filter: blur(5px);
+}
+
+.backgroundProject5 {
+    background-image: url('Images/5.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    backdrop-filter: blur(5px);
+}
+
+.backgroundProject6 {
+    background-image: url('Images/6.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    backdrop-filter: blur(5px);
+}
+
+.backgroundProject7 {
+    background-image: url('Images/7.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    backdrop-filter: blur(5px);
+}

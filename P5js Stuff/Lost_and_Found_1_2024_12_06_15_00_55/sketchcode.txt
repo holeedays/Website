@@ -1,0 +1,182 @@
+function setup() {
+  createCanvas(600, 600);
+  noStroke()
+  // this was done using the p5.fillgradient addon
+  fillGradient('linear', {
+    from: [0,0],
+    to: [600, 0],
+  //  left to right colors --> whitish color to brass color to black/grayish color
+    steps: [
+      [color(180), 0],
+      [color(197, 144, 66), .5],
+      [color(61, 31, 55), 1]
+    ]
+  }
+              )
+}
+
+function draw() {
+  background(191, 188, 166);
+  push();
+    blendMode(SCREEN);
+    fill(224, 219, 175, 40);
+    rect(0, 0, width/3 * 2, height); 
+    push();
+      fill(224, 193, 177, 40);
+      rect(width/3, 0, width/3 * 2, height);
+    pop();
+  pop();
+    
+  // main body
+  circle(400, height/2, 200);
+  
+    // body of the key (i.e. arm extension)
+  rect (100, 275, 300, 50);
+  triangle (100, 275, 100, 325, 50, 300);
+  
+    //  teeth of the arm
+  beginShape();
+    vertex(98, 339);
+    bezierVertex(99, 339, 101, 340, 103, 339);
+    bezierVertex(105, 339, 106, 338, 107, 337);
+    bezierVertex(118, 328, 127, 331, 132, 334);
+    bezierVertex(135, 336, 139, 336, 143, 334);
+    bezierVertex(151, 330, 166, 324, 181, 334);
+    bezierVertex(185, 336, 189, 336, 193, 334);
+    bezierVertex(196, 331, 204, 331, 219, 339);
+    bezierVertex(220, 339, 218, 339, 221, 338);
+    bezierVertex(228, 336, 250, 330, 263, 339);
+    bezierVertex(264, 339, 265, 339, 266, 338);
+    vertex(273, 318);
+    vertex(50, 300);
+  endShape();
+  
+  beginShape();
+    vertex(295, 352);
+    bezierVertex(296, 353, 298, 355, 299, 355);
+    vertex(388, 374);
+    vertex(400, 313);
+    vertex(282, 313);
+  endShape();
+  
+    //  arm decor (shadows)
+  push();
+    fill(59, 36, 20, 70);
+    translate(0, -5);
+    beginShape();
+      vertex(98, 339);
+      bezierVertex(99, 339, 101, 340, 103, 339);
+      bezierVertex(105, 339, 106, 338, 107, 337);
+      bezierVertex(118, 328, 127, 331, 132, 334);
+      bezierVertex(135, 336, 139, 336, 143, 334);
+      bezierVertex(151, 330, 166, 324, 181, 334);
+      bezierVertex(185, 336, 189, 336, 193, 334);
+      bezierVertex(196, 331, 204, 331, 219, 339);
+      bezierVertex(220, 339, 218, 339, 221, 338);
+      bezierVertex(228, 336, 250, 330, 263, 339);
+      bezierVertex(264, 339, 265, 339, 266, 338);
+      vertex(273, 305);
+      vertex(50, 305);
+    endShape();
+    beginShape();
+      vertex(295, 352);
+      bezierVertex(296, 353, 298, 355, 299, 355);
+      vertex(388, 374);
+      vertex(400, 305);
+      vertex(285, 305);
+      endShape();
+      quad(289.4, 325, 268.4, 326, 273, 305, 285, 305);
+    rect(100, 290, 203, 8);
+    triangle(100, 290, 100, 298, 85, 298);
+  pop();
+  
+    // the little thing for the keychain
+  circle(500, height/2, 50);
+  
+    // main body accessories (including the keychain hole area)
+  push();
+    push();
+    fill(0, 0, 0, 70);
+    arc(400, height/2, 190, 190, 0, PI);
+    pop();
+    arc(400, height/2-7, 190, 190, 0, PI);
+    fill(0, 0, 0, 40);
+    circle(400, height/2, 190);
+    circle(500, height/2, 40);
+    noFill();
+    stroke(20, 20 , 20, 30);
+    strokeWeight(10);
+    circle(400, height/2, 185);
+  pop();
+    // this is the keychain hole by the way
+  push();
+    fill(0);
+    translate(400, height/2);
+    rotate(-PI/2);
+    circle(0, 100, 25);
+    // circle(500, height/2, 20);
+    pop();
+  
+    // main body floral etchings
+  push();
+    noFill();
+    stroke(0, 0, 0, 100);
+    strokeWeight(1.5);
+    beginShape();
+      vertex(341, 346);
+      bezierVertex(331, 345, 329, 333, 331, 332);
+      bezierVertex(339, 334, 341, 344, 341, 346);
+      bezierVertex(344, 334, 342, 339, 354, 336);
+      bezierVertex(355, 347, 350, 349, 341, 346);
+      bezierVertex(341, 360, 341, 361, 361, 368);
+      bezierVertex(362, 355, 360, 357, 367, 350);
+      bezierVertex(372, 351, 372, 364, 361, 368);
+      bezierVertex(366, 386, 402, 381, 406, 361);
+      bezierVertex(387, 362, 371, 370, 384, 385);
+      bezierVertex(392, 399, 384, 383, 406, 381);
+      bezierVertex(410, 378, 412, 377, 414, 377);
+      bezierVertex(417, 377, 417, 374, 417, 380);
+      bezierVertex(410, 373, 412, 376, 411, 372);
+      bezierVertex(406, 361, 407, 358, 414, 346);
+      bezierVertex(426, 361, 433, 367, 417, 380);
+      bezierVertex(428, 370, 417, 373, 430, 373);
+      bezierVertex(426, 374, 436, 370, 435, 364);
+      bezierVertex(430, 368, 430, 370, 430, 373);
+      bezierVertex(437, 377, 437, 374, 433, 385);
+      bezierVertex(431, 381, 425, 379, 430, 373);
+      bezierVertex(459, 347, 452, 355, 460, 354);
+      bezierVertex(461, 349, 456, 343, 449, 337);
+      bezierVertex(449, 348, 452, 349, 460, 354);
+      bezierVertex(468, 347, 468, 335, 463, 334);
+      bezierVertex(460, 344, 460, 340, 460, 354);
+      bezierVertex(468, 347, 484, 330, 467, 299);
+      bezierVertex(460, 286, 461, 288, 452, 288);
+      bezierVertex(452, 290, 459, 297, 467, 299);
+      bezierVertex(475, 302, 476, 299, 479, 312);
+      bezierVertex(475, 312, 469, 309, 467, 299);
+      bezierVertex(467, 285, 463, 290, 473, 283);
+      bezierVertex(473, 289, 474, 294, 467, 299);
+      bezierVertex(463, 308, 462, 308, 454, 308);
+      bezierVertex(457, 301, 461, 298, 467, 299);
+      bezierVertex(476, 302, 477, 301, 488, 295);
+      bezierVertex(470, 291, 478, 295, 465, 299);
+      bezierVertex(457, 283, 458, 277, 461, 259);
+      bezierVertex(465, 245, 457, 239, 454, 238);
+      bezierVertex(454, 252, 451, 252, 461, 259);
+      bezierVertex(470, 264, 478, 257, 479, 252);
+      bezierVertex(462, 249, 467, 245, 461, 259);
+      bezierVertex(448, 257, 436, 243, 444, 237);
+      bezierVertex(447, 240, 450, 248, 443, 254);
+      bezierVertex(425, 259, 423, 253, 405, 226);
+      bezierVertex(431, 240, 438, 240, 448, 232);
+      bezierVertex(423, 220, 435, 220, 405, 226);
+      bezierVertex(401, 227, 395, 227, 399, 242);
+      bezierVertex(402, 238, 409, 238, 405, 226);
+      bezierVertex(378, 219, 383, 220, 371, 227);
+      bezierVertex(351, 232, 369, 230, 350, 228);
+      bezierVertex(362, 219, 363, 217, 371, 227);
+      bezierVertex(375, 235, 384, 223, 385, 247);
+      bezierVertex(378, 246, 368, 243, 371, 227);
+    endShape();
+  pop();
+}

@@ -1,0 +1,14 @@
+This is going to be a platform-esque puzzle game with 3 levels.
+
+Player: The player is going to be pretty ambiguous: they do not have any noticeable, distinguishing features and they will probably be more of a silhouette. It's a representation of how I view myself: a nobody, a shadow.
+
+The trajectory of the game will go something like this: 
+
+Beginning: Symbolically represents starting out on something new. Like having a fresh new start going to college. Hopes are high and the feeling is optimistic. 
+This level will be an easy completion. 
+
+Middle: This is when things starts to get tough. External pressures and work in college leads to confusion and difficulty. My path in life becomes unclear and I'm thinking about giving up. 
+The level becomes more difficult, with the inclusion of new obstacles.
+
+End: This is the climax. This basically happens directly after the middle. This is when tensions are the highest and I have to make a resolution. College and just life in general is kicking my ass so I have to bear through it just for a little bit more. 
+This level will be the most difficult as it includes new obstacles and pathing. Once completed however, there will be a reward.

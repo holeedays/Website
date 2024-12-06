@@ -1,0 +1,7 @@
+I sketched out 3 basic illusions: the penrose triangle, the ebbinghaus ilusion, and the color constancy illusion. Since these illusions are pretty famous, I didn't have to do much in depth research on them. However, I had to make the work unique in some way. Thankfully, I brainstormed some pretty neat, but doable ideas pretty quickly. I ended up picking the ebbinghaus illusion as my focus for this assignment.
+
+To be honest, the optical illusion I opted for was pretty simple conceptually and executionally (is that a word?) so I didn't really have that much trouble making it. However, since it felt a bit too simple, I decided to make a game out of it where the player has to identify whether the circles are the same size or not the same size (by the way they do vary in size randomly). 
+
+Since the assignment required some form of animation (or the use of modulo) I just decided to oscillate the surrounding balls back and forth. It's not much of an animation but I guess it does add some eye candy to the mix.
+
+Since my project is basically an interactive game, I think I can employ this anywhere: maybe on browser sites like newgrounds or coolmath. Since the game is actually really hard, I think it could be a fun game to play for at least a good 10 minutes - which is good enough for me.

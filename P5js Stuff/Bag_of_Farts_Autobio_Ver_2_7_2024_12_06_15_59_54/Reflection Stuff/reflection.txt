@@ -1,0 +1,13 @@
+Edmond Huang
+
+(BTW, given the nature of shooter games the project is 600x1000 px which I hope is fine)
+
+Welcome to shooter! The game where you shoot your inner demons in the hopes of surviving another day
+
+This game was an entirely different concept compared to my original concept, which was to make a 2d platformer game. Due to a lot of issues with physics logic and whatnot, I ended up switching to this shooter game that we see now.
+
+Though the gameplay had changed, the theme was still the same: it's me battlng and fighting through the pitfalls of life. The enemies are a representation of my 'inner demons' that culminate when life gets tough (the specific time frame of this is starting post senior yr to college time) and so I have to beat them to protect myself. 
+
+I've attached the original text file describing the concept of my platformer game as well as these initial storyboards. 
+
+Despite the swap from a very robust (platformer) to a semi-robust game (shooter), there was still a lot of coding done. In the beginning, I wrote a lot of code that was really redundant: this caused significant issues with hit detection and a number of things in the game. After some help a lengthy time dedicated to refactoring, I was able to make a shooter game that handled actually pretty well. My primary focus throughout the project was to make the game 100% playable and working rather than on the actual design/aesthetic of the project: this can probably be seen given the lack of really anything in my game. Even then, I still have some gripes about the mechanics of the game. Regardless, I feel like I really learned a lot about making a pretty decent shooter and coding more efficiently. And I ended up with a neat little project too.

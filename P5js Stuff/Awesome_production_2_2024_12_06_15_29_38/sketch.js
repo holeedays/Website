@@ -22,7 +22,7 @@ function setup() {
 }
 
 function preload() {
-  customFont = loadFont('Soda Cream.otf');
+  customFont = loadFont('Soda Cream.otf');  
 }
 
 function draw() { // draw() tries to run @ 60 fps

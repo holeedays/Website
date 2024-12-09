@@ -32,26 +32,26 @@ var pixelFont;
 
 function preload() {
   
-  playerImage = loadImage('Assets/Player.png');
-  playerHurtImage = loadImage('Assets/Player Hurt.png');
+  playerImage = loadImage('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Assets/Player.png');
+  playerHurtImage = loadImage('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Assets/Player Hurt.png');
   
-  enemyImage = loadImage('Assets/Enemy.png');
-  enemyHurtImage = loadImage('Assets/Enemy Hurt.png');
+  enemyImage = loadImage('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Assets/Enemy.png');
+  enemyHurtImage = loadImage('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Assets/Enemy Hurt.png');
   
-  buffEnemyImage = loadImage('Assets/Buff Enemy.png');
-  buffEnemyHurtImage = loadImage('Assets/Buff Enemy Hurt.png');
+  buffEnemyImage = loadImage('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Assets/Buff Enemy.png');
+  buffEnemyHurtImage = loadImage('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Assets/Buff Enemy Hurt.png');
   
-  shooterEnemyImage = loadImage('Assets/Shooter Enemy.png');
-  shooterEnemyHurtImage = loadImage('Assets/Shooter Enemy Hurt.png');
+  shooterEnemyImage = loadImage('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Assets/Shooter Enemy.png');
+  shooterEnemyHurtImage = loadImage('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Assets/Shooter Enemy Hurt.png');
   
-  projectileImage = loadImage('Assets/Player Projectile.png');
-  shooterEnemyProjectileImage = loadImage('Assets/Shooter Enemy Projectile.png');
+  projectileImage = loadImage('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Assets/Player Projectile.png');
+  shooterEnemyProjectileImage = loadImage('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Assets/Shooter Enemy Projectile.png');
   
-  enemyDamageSound = loadSound('Audio/retro-coin-4-236671.mp3');
-  playerDamageSound = loadSound('Audio/8-bit-explosion-95847.mp3');
-  musicSound = loadSound('Audio/pixel-245147.mp3');
+  enemyDamageSound = loadSound('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Audio/retro-coin-4-236671.mp3');
+  playerDamageSound = loadSound('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Audio/8-bit-explosion-95847.mp3');
+  musicSound = loadSound('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Audio/pixel-245147.mp3');
   
-  pixelFont = loadFont('Fonts/PixelifySans-Regular.ttf');
+  pixelFont = loadFont('P5js Stuff/Bag_of_Farts_Autobio_Ver_2_7_2024_12_06_15_59_54/Fonts/PixelifySans-Regular.ttf');
 }
 
 function setup() {

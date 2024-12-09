@@ -22,7 +22,7 @@ function setup() {
 }
 
 function preload() {
-  customFont = loadFont('Soda Cream.otf');  
+  customFont = loadFont('P5js Stuff/Awesome_production_2_2024_12_06_15_29_38/Soda Cream.otf');  
 }
 
 function draw() { // draw() tries to run @ 60 fps

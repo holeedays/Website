@@ -35,7 +35,7 @@ let SMILEKINDS; // this is for a custom font
 
 function preload() {
   
-  SMILEKINDS = loadFont('SMILE KINDS.otf');
+  SMILEKINDS = loadFont('P5js Stuff/Optical_Illusions_5_2024_12_06_15_46_02/SMILE KINDS.otf');
 }
 
 function setup() {

@@ -197,6 +197,27 @@ a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+#ACCsketch-container1 {
+    z-index: 1; 
+    position: relative; 
+
+    display: block;
+    width: 600px;
+    height: 600px;
+    margin: 20px auto;
+    border: 10px solid #c25c1d;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
 .backgroundProject1 {
     background-image: url('Images/1.png'); 
     background-repeat: no-repeat; 

@@ -123,7 +123,7 @@ main {
 #side_bar_grid {
   display: grid;
 
-  grid-template-columns: 300px auto;
+  grid-template-columns: 300px 1fr;
   transition: 300ms;
 
   grid-row-gap: none;

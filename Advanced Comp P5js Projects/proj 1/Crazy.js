@@ -68,16 +68,115 @@ function Crazy3(string) {
 
     textAlign(CENTER);
     fill(255);
-    stroke(255);
 
     text("hold spacebar down to see the word", width/2, 500);
+
+    push();
+    
+    stroke(255);
 
     for (let p of points) {
         line(p.x, p.y, crazy3.lineOrigin[0], crazy3.lineOrigin[1]);
     }
+
+    pop();
     
     if (keyIsDown(32)) {
         crazy3.lineOrigin[0] = random(0, width);
         crazy3.lineOrigin[1] = random(0, height);
     } 
+}
+
+class CrazyFinal {
+
+    constructor(string, x, y, fontSize, arrayLength, strobeSpeed) {
+
+        this.string = string;
+        this.x = x;
+        this.y = y;
+        this.fontSize = fontSize;
+
+        this.strobeSpeed = strobeSpeed;
+
+        this.arrayLength = arrayLength;
+        this.masterArray = [];
+        this.shadeArray = [];
+
+        this.shadeValue = 0;
+        this.shadeIncrement = 1;
+    }
+
+    setup() {
+
+        this.createArrays();
+        this.setupShadeValues();
+    }
+
+    update() {
+
+        this.updateShadeValues();
+    }
+
+    display() {
+
+        for (let i = 0; i < this.arrayLength; i++) {
+            fill(this.shadeArray[i]);
+            for (let j = 0; j < this.masterArray[i].length; j++) {
+                circle(this.masterArray[i][j].x, this.masterArray[i][j].y, 5);
+            }
+        }
+
+        push();
+            if (this.strobeSpeed === 1) {
+                fill(255);
+                text("(EPILEPSY WARNING) Keep pressing E to increase strobe speed", width/2, 500);
+            }
+        pop();
+    }
+
+    createArrays() {
+
+        for (let i = 0; i < this.arrayLength; i++) {
+
+            this.points = font.textToPoints(this.string, this.x - i * 10, this.y + i * 10, this.fontSize, {sampleFactor: 0.3});
+            this.masterArray.push(this.points);
+        }
+    }
+
+    setupShadeValues() {
+
+        for (let i = 0; i < this.arrayLength; i++) {
+
+            this.shadeArray.push(0); 
+        }
+    }
+
+    updateShadeValues() {
+
+        if (this.shadeValue >= 255/this.arrayLength)
+            this.shadeIncrement = -1;
+        else if (this.shadeValue <= -255/this.arrayLength)
+            this.shadeIncrement = 1;
+
+        this.shadeValue += this.shadeIncrement * deltaTime/10 * this.strobeSpeed;
+
+        for (let i = 0; i < this.arrayLength; i++) {
+            this.shadeArray[i] += this.shadeValue * i;
+
+            if (this.shadeArray[i] > 255)
+                this.shadeArray[i] = 255;
+            if (this.shadeArray[i] < 0)
+                this.shadeArray[i] = 0;
+
+            // constrain(this.shadeArray[i]);
+        }
+    }
+
+    reset() {
+
+        this.shadeValue = 0;
+        this.shadeIncrement = 1;
+        this.strobeSpeed = 1;
+    }
+
 }

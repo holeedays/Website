@@ -82,3 +82,86 @@ function Size3(string) {
     else if (size3.timer > 3)
             size3.timer = 0;
 }
+
+class SizeFinal {
+
+    constructor(string, xSmall, ySmall, xBig, yBig, fontSizeSmall, fontSizeBig, speed) {
+
+        this.smallPoints = font.textToPoints(string, xSmall, ySmall, fontSizeSmall, {sampleFactor: 0.2});
+        this.bigPoints = font.textToPoints(string, xBig, yBig, fontSizeBig, {sampleFactor: 0.1})
+
+        this.points = font.textToPoints(string, xSmall, ySmall, fontSizeSmall, {sampleFactor: 0.2}); // these are the points we are going to manipulate
+
+        this.switch = 0;
+        this.speed = speed;
+
+        this.ePressed = false;
+    }
+
+    setup() {
+
+    }
+
+    update() {
+
+        if (this.switch % 2 === 0)
+            this.expand();
+        else if (this.switch % 2 === 1)
+            this.shrink();
+
+        // console.log(this.switch);
+    }
+    
+    display() {
+
+        for (let point of this.points) {
+            circle(point.x, point.y, 5);
+        }
+
+        if (this.ePressed === false) {
+            text("Press E to shrink/expand the text", width/2, 500);
+        }
+    }
+
+    expand() {
+
+        for (let i = 0; i < this.points.length; i++) {
+
+            if (this.points[i].x <= this.bigPoints[i].x)
+                this.points[i].x += this.speed * deltaTime/50; // the e inflates really slow
+            
+            if (this.points[i].x >= this.bigPoints[i].x)
+                this.points[i].x -= this.speed * deltaTime/50;
+    
+            if (this.points[i].y <= this.bigPoints[i].y)
+                this.points[i].y += this.speed * deltaTime/100;
+    
+            if (this.points[i].y >= this.bigPoints[i].y)
+                this.points[i].y -= this.speed * deltaTime/100;
+        }
+    }
+
+    shrink() {
+
+        for (let i = 0; i < this.points.length; i++) {
+
+            if (this.smallPoints[i].x <= this.points[i].x)
+                this.points[i].x -= this.speed * deltaTime/50; // the e inflates really slow
+            
+            if (this.smallPoints[i].x >= this.points[i].x)
+                this.points[i].x += this.speed * deltaTime/50;
+    
+            if (this.smallPoints[i].y <= this.points[i].y)
+                this.points[i].y -= this.speed * deltaTime/100;
+    
+            if (this.smallPoints[i].y >= this.points[i].y)
+                this.points[i].y += this.speed * deltaTime/100;
+        }
+    }
+
+    reset() {
+
+        this.switch = 0;
+        this.ePressed = false;
+    }
+}

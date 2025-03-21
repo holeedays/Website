@@ -1,6 +1,6 @@
 var capture;
 
-
+var fillVal = [];
 
 
 
@@ -53,13 +53,13 @@ function draw() {
     // image(video, 0, 0);
 
     // draw face scans
-    drawBoxes(detections);//Draw detection box
-    drawLandmarks(detections); // Draw all the face points
+    // drawBoxes(detections);//Draw detection box
+    // drawLandmarks(detections); // Draw all the face points
 
     createExpressions();
     
     pixelateExpression();
-    drawExpressions(detections, 40, 600, 50);//Draw face expression text
+    drawExpressions(detections, 40, 700, 50);//Draw face expression text
 
     video.updatePixels();
 }
@@ -120,8 +120,6 @@ function drawExpressions(detections, x, y, textYSpace){
 
   if(detections.length > 0){//If at least 1 face is detected
 
-        // console.log(2);
-
         // let {neutral, happy, angry, sad, disgusted, surprised, fearful} = detections[0].expressions; // expressions seem to be an inbuilt system with faceApi and not face mesh 
 
         // image classification also doesn't achieve the same thing for some reason :/
@@ -131,24 +129,39 @@ function drawExpressions(detections, x, y, textYSpace){
         fill(44, 169, 225);
 
         text("neutral:       " + nf(expressions.neutral*100, 2, 2)+"%", x, y);
+
+        fill("orange");
+
         text("happiness: " + nf(expressions.happy*100, 2, 2)+"%", x, y+textYSpace);
-        text("anger:        " + nf(expressions.angry*100, 2, 2)+"%", x, y+textYSpace*2);
+        text("surprised:  " + nf(expressions.surprised*100, 2, 2)+"%", x, y+textYSpace*2);
+
+        fill("purple");
+
         text("sad:            "+ nf(expressions.sad*100, 2, 2)+"%", x, y+textYSpace*3);
-        text("disgusted: " + nf(expressions.disgusted*100, 2, 2)+"%", x, y+textYSpace*4);
-        text("surprised:  " + nf(expressions.surprised*100, 2, 2)+"%", x, y+textYSpace*5);
-        text("fear:           " + nf(expressions.fearful*100, 2, 2)+"%", x, y+textYSpace*6);
+        text("anger:        " + nf(expressions.angry*100, 2, 2)+"%", x, y+textYSpace*4);
+        // text("disgusted: " + nf(expressions.disgusted*100, 2, 2)+"%", x, y+textYSpace*4);
+        // text("fear:           " + nf(expressions.fearful*100, 2, 2)+"%", x, y+textYSpace*6);
   }
   else{//If no faces is detected
 
-        // console.log(1);
+        textSize(15);
+        textStyle(BOLD);
+
+        fill(0);
+
+        push();
+          textAlign(CENTER);
+          text("Say hi to the webcam!", windowWidth/2, windowHeight/2);
+        pop();
 
         text("neutral: ", x, y);
         text("happiness: ", x, y + textYSpace);
-        text("anger: ", x, y + textYSpace*2);
+        text("surprised: ", x, y + textYSpace*2);
+
         text("sad: ", x, y + textYSpace*3);
-        text("disgusted: ", x, y + textYSpace*4);
-        text("surprised: ", x, y + textYSpace*5);
-        text("fear: ", x, y + textYSpace*6);
+        text("anger: ", x, y + textYSpace*4);
+        // text("disgusted: ", x, y + textYSpace*4);
+        // text("fear: ", x, y + textYSpace*6);
   }
 }
 
@@ -167,7 +180,9 @@ function pixelate(increment) {
         let a = video.pixels[index+3];
   
         noStroke();
+
         fill(r, g, b, a);
+        
         rect(x, y, increment);
       }
     }
@@ -184,15 +199,15 @@ function pixelateExpression() {
 
         pixelationValue = 10;
     }
-    else if (expressions.happy*100 > 50) {
+    else if ((expressions.happy*100 > 50) || (expressions.surprised*100 > 50)) {
 
         pixelationValue -= 1;
         
-        if (pixelationValue < 6) {
-            pixelationValue = 6;
+        if (pixelationValue < 5) {
+            pixelationValue = 5;
         }
     } 
-    else if (expressions.sad*100 > 50) {
+    else if ((expressions.sad*100 > 50) || (expressions.angry*100 > 50)) {
 
         pixelationValue += 2;
 

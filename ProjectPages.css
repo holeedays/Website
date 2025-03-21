@@ -210,6 +210,19 @@ a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+#ACCsketch-container2 {
+    z-index: 1; 
+    position: relative; 
+
+    display: block;
+    width: 1920px;
+    height: 1080px;
+    margin: 20px auto;
+    border: 10px solid #c25c1d;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 
 
 

@@ -16,6 +16,7 @@ var pixelationValue = 0;
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
+  // canvas = createCanvas(windowWidth, windowHeight).parent("ACCsketch-container2");
   canvas.id("canvas");
 
   video = createCapture(VIDEO);// Create the video

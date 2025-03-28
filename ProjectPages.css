@@ -19,9 +19,9 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    width: 1000px;
+    width: auto;
     margin: 0 auto;
-    padding: 20px;
+    padding: 50px;
     background: #f5ffe1;
     border: 1px solid #ddd;
     border-radius: 8px;

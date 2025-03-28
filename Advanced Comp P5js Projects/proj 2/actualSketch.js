@@ -15,7 +15,7 @@ var expressions = {neutral, happy, angry, sad, disgusted, surprised, fearful};
 var pixelationValue = 0;
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(1920, 1080).parent("ACCsketch-container2"); // setting it windowWidth and windowHeight doesn't do good for html page as it causes overlapping issues
   // canvas = createCanvas(windowWidth, windowHeight).parent("ACCsketch-container2");
   canvas.id("canvas");
 

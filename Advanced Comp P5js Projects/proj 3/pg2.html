@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="questionsPgs.css">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- question 1-->
+
+    <div class = "questionContainer">
+
+        <div class = "question">
+
+            <p>
+                1. How much income does you and your parents earn? Include both mother, father, or any other legal guardian 
+                responsible for your financial custody.
+            </p>
+        </div>
+
+        <div class = "sliderAccessories">
+
+            <p class = "captions"; style = "text-align:left"> No/Lower Income ($0) </p>
+
+            <div> <!-- These are just spaces by the way -->
+            </div>
+
+            <p class = "captions""> Median Income ($40,000) </p>
+
+            <div>
+            </div>
+
+            <p class = "captions"; style = "text-align:right"> Upper Income ($160,000+) </p>
+
+            <div class = "sliderContainer">
+
+                <input type = "range"; name = "income"; min = "0"; max = "160000"; class = "slider"; id = "Q1Slider">
+                
+            </div>
+
+            <div class = "sliderCounter"; id = "Q1SliderCounter">
+                <p>
+                    Scroll!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- question 2 -->>
+
+    <div class = "questionContainer">
+
+        <div>
+
+            <div class = "question">
+                <p>
+                    2. How satisfied are you with your current financial situation?
+                </p>
+            </div>
+           
+            <div class = "buttonContainer">
+
+                <button id = "Q2Button1"; class = "buttonUnclicked">
+                    Unsatisfied
+                </button>
+
+                <button id = "Q2Button2"; class = "buttonUnclicked">
+                    Slightly Unsatisfied
+                </button>
+
+                <button id = "Q2Button3"; class = "buttonUnclicked">
+                    Don't know
+                </button>
+
+                <button id = "Q2Button4"; class = "buttonUnclicked">
+                    Slightly Satisfied
+                </button>
+
+                <button id = "Q2Button5"; class = "buttonUnclicked">
+                    Satisfied
+                </button>
+            </div>
+        </div>
+
+        </div class = "space">
+        </div>
+    </div>
+
+    <!-- question 3 -->
+
+    <div class = "questionContainer">
+
+        <div>
+
+            <div class = "question">
+                <p>
+                    3. What is the political environment of your municipality (town or city)/ surburb/ primary residence?
+                    Extremes involve the Right Wing (conservative) and Left Wing (liberal). Generalities are accepted, specifics are not required/needed to be considered.
+                </p>
+            </div>
+           
+            <div class = "buttonContainer">
+
+                <button id = "Q3Button1"; class = "buttonUnclicked">
+                    Heavily Liberal
+                </button>
+
+                <button id = "Q3Button2"; class = "buttonUnclicked">
+                    Slightly Liberal
+                </button>
+
+                <button id = "Q3Button3"; class = "buttonUnclicked">
+                    Split/Undecided
+                </button>
+
+                <button id = "Q3Button4"; class = "buttonUnclicked">
+                    Slightly Conservative
+                </button>
+
+                <button id = "Q3Button5"; class = "buttonUnclicked">
+                    Heavily Conservative
+                </button>
+            </div>
+        </div>
+
+        </div class = "space">
+        </div>
+    </div>
+
+    <!-- question 4 -->
+
+    <div class = "questionContainer">
+
+        <div>
+
+            <div class = "question">
+                <p>
+                    4. What is your personal political affiliation?
+                </p>
+            </div>
+           
+            <div class = "buttonContainer">
+
+                <button id = "Q4Button1"; class = "buttonUnclicked">
+                    Heavily Liberal
+                </button>
+
+                <button id = "Q4Button2"; class = "buttonUnclicked">
+                    Slightly Liberal
+                </button>
+
+                <button id = "Q4Button3"; class = "buttonUnclicked">
+                    Split/Undecided
+                </button>
+
+                <button id = "Q4Button4"; class = "buttonUnclicked">
+                    Slightly Conservative
+                </button>
+
+                <button id = "Q4Button5"; class = "buttonUnclicked">
+                    Heavily Conservative
+                </button>
+            </div>
+        </div>
+
+        </div class = "space">
+        </div>
+    </div>
+
+     <!-- question 5 -->
+
+     <div class = "space">
+     </div>
+
+     <div class = "questionContainer">
+
+        <div class = "question">
+
+            <p>
+                5. What relative percentage of the people in your residence participate in political activities
+                (i.e. are registered voters, attend poltiical events, engage with local or higher governmental officials)?
+            </p>
+        </div>
+
+        <div class = "sliderAccessories">
+
+            <p class = "captions"; style = "text-align:left"> 0% </p>
+
+            <div> <!-- These are just spaces by the way -->
+            </div>
+
+            <p class = "captions""> 50% </p>
+
+            <div>
+            </div>
+
+            <p class = "captions"; style = "text-align:right"> 100% </p>
+
+            <div class = "sliderContainer">
+
+                <input type = "range"; name = "income"; min = "0"; max = "100"; class = "slider"; id = "Q5Slider">
+                
+            </div>
+
+            <div class = "sliderCounter"; id = "Q5SliderCounter">
+                <p>
+                    Scroll!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class = "nextPageButtonContainer">
+
+        <p style = "width: 100%; font-style: italic; opacity: .6;">
+            Make sure the answers you've put in are 100% accurate. You cannot go back to make alterations.
+        </p>
+
+        <div class = "space">
+        </div>
+
+        <div>
+            <a href = "pg3.html"; class = "nextPageButton"> Go to the next page</a>
+        </div>
+    </div>
+
+    <script src = "functions.js"></script>
+</body>
+</html>

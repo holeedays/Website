@@ -1,6 +1,3 @@
-
-@font-face { font-family: Modern Age; src: url('Modern\ Age.otf'); }
-
 * {
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -10,9 +7,7 @@
     padding: 0px;
 }
 
-
 h1 {
-    font-family: Modern Age;
 
     font-size: 100px;
     text-decoration: underline;
@@ -23,25 +18,9 @@ h2 {
     font-size: 30px;
 }
 
-.titleStart {
-
-    padding: 0 0 0 10px;
-}
-
-.titleEnd {
+.title {
 
     text-align: center;
-}
-
-.description {
-
-    background: rgb(230, 230, 230);
-    border-top: 10px groove black;
-
-    font-size: 25px;
-
-    margin: 10px 0;
-    padding: 30px;
 }
 
 .resultsContainer {
@@ -109,9 +88,4 @@ h2 {
 .button:hover {
 
     opacity: 1;
-}
-
-.line {
-
-    border-top: 500px solid rgb(0, 0, 0);
 }

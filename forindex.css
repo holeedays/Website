@@ -143,14 +143,18 @@ main {
 }
 
 #side_bar_grid > .side_bar_item_portfolio {
-  background-color: rgb(255, 130, 29);
+  background-color: rgb(255, 176, 29);
+}
+
+#side_bar_grid > .side_bar_item_javascript {
+  background-color: rgb(230, 122, 0);
 }
 
 #side_bar_grid > .side_bar_item_other {
   background-color: rgb(255, 206, 73);
 }
 
-#side_bar_grid:has(.side_bar_item_p5js:hover, .side_bar_item_portfolio:hover, .side_bar_item_other:hover) {
+#side_bar_grid:has(.side_bar_item_p5js:hover, .side_bar_item_portfolio:hover, .side_bar_item_other:hover, .side_bar_item_javascript:hover) {
   grid-template-columns: 90% 1fr;
 
   background-color: rgb(255, 245, 157);
@@ -161,6 +165,10 @@ main {
 }
 
 .side_bar_item_portfolio {
+  padding: 50px;
+}
+
+.side_bar_item_javascript {
   padding: 50px;
 }
 

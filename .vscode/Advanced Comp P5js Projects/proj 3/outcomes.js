@@ -25,19 +25,7 @@ var Q9Results = document.getElementById("Q9Results");
 var Q10Results = document.getElementById("Q10Results");
 
 
-var resetQuiz = document.getElementById("resetQuiz"); // var for anchor
-
-
-// actual functions that run, sometimes console might return an error because some of the variables return null if not answered (i.e. functions in display
-// results) but everything stll works just fine
-
-
-ResetQuiz();
 DisplayResults();
-
-
-
-
 
 function DisplayResults() {
 
@@ -305,16 +293,6 @@ function CleanString(str) { // removes extraneous characters from a string (whit
     }
 
     return targetStr;
-}
-
-function ResetQuiz() { // if anchor go back to start of quiz is pressed, remove all slocally saved variables
-
-    resetQuiz.addEventListener("click", () => {
-
-        console.log(1);
-        // event.preventDefault();
-        sessionStorage.clear();
-    })
 }
 
 

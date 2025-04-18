@@ -26,6 +26,7 @@ var Q10Results = document.getElementById("Q10Results");
 
 
 var resetQuiz = document.getElementById("resetQuiz"); // var for anchor
+var resetQuiz1 = document.getElementById("resetQuiz1"); // another var for anchor
 
 
 // actual functions that run, sometimes return a failed to get renderer error
@@ -315,8 +316,13 @@ function ResetQuiz() { // if anchor go back to start of quiz is pressed, remove 
 
     resetQuiz.addEventListener("click", () => {
 
-        console.log(1);
+        // console.log(1);
         // event.preventDefault();
+        sessionStorage.clear();
+    })
+
+    resetQuiz1.addEventListener("click", () => {
+
         sessionStorage.clear();
     })
 }

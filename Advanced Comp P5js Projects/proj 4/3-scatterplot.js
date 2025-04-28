@@ -103,6 +103,7 @@ class scatterPlotGraph {
         this.displayIntervalLabels();
 
         this.displayPoints();
+        this.displayDateOnGraph(findIndexOfDate(), 300);
     }
     
 
@@ -481,6 +482,27 @@ class scatterPlotGraph {
             }
 
         pop();
+    }
+
+    displayDateOnGraph(index, lineLength) {
+
+        if (index != null || index != undefined) {
+
+            const lineYStart = this.pointsYCoord[index] + 10;
+            const lineYEnd = lineYStart + lineLength;
+
+            push();
+
+                textSize(12);
+                noFill();
+
+                stroke(0, 0, 255, 100);
+                strokeWeight(0.5);
+            
+                line(this.pointsXCoord[index], lineYStart, this.pointsXCoord[index], lineYEnd);
+                text("this is where you have selected", this.pointsXCoord[index], lineYEnd + 20);
+            pop();
+        }
     }
 }
 

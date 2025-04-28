@@ -1,5 +1,4 @@
 var limit = 1606;
-
 var JSON = "https://hedonometer.org/api/v1/happiness/?format=json&timeseries__title=en_all&date__gte=2019-01-01&limit=" + limit;
 
 var years = {
@@ -10,32 +9,52 @@ var years = {
     yr2022: [],
     yr2023: []
 }
-
 var currentYearArray = [];
 
 var graph;
 
+var font;
+
 function preload() {
 
     loadJSON(JSON, handleData);
+
+    font = loadFont("Advanced Comp P5js Projects/proj 4/TT Chocolates Trial Regular.otf");
 }
 
 function setup() {
 
-    createCanvas(innerWidth, innerHeight);
+    createCanvas(innerWidth - 400, innerHeight - 75).parent("sketch");
+    textFont(font);
 
-    graph = new scatterPlotGraph(400, 800, 1400, 700, 12, 4, "Months", "Happiness Score");
+    graph = new scatterPlotGraph(180, 800, 1400, 700, 12, 4, "Months", "Happiness Score");
 }
 
 function draw() {
 
-    background(255);
+    background(240);
 
-    graph.update();
-    graph.display();
+    if (alertClicked) { // this bool is from 5-description.js
+
+        graph.update();
+        graph.display();
+    }
+
 
 
     setGraph();
+    setDescriptiontext();
+}
+
+var currentlySelectedYear = 0;
+var currentlySelectedMonth = 0;
+var currentlySelectedDay = 0;
+
+
+
+
+
+function setDescriptiontext() {
 
     var viewerText = null;
 
@@ -46,19 +65,8 @@ function draw() {
 
         viewerText = `On ${date}, the world showed a happiness score of ${happinessScore}.
         The world was ${determineHappiness(happinessScore)}.`;
-
-        push();
-            textAlign(LEFT);
-            textSize(20);
-            text(viewerText, 100, 900);
-        pop();
     }    
 }
-
-
-var currentlySelectedYear = 0;
-var currentlySelectedMonth = 0;
-var currentlySelectedDay = 0;
 
 function determineHappiness(value) {
 
@@ -69,7 +77,7 @@ function determineHappiness(value) {
     else if (happinessToFloat > 6.1)
         return "happier than normal";
     else 
-        return "happy as it usually is";
+        return "as happy as it usually is";
 }
 
 
@@ -185,7 +193,6 @@ function convertMonthStringToNum (string) {
             return 11;
         case "December":
             return 12;
-
     }
 }
 

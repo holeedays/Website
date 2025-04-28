@@ -2,6 +2,16 @@ const yearSelect = document.getElementById("year");
 const monthSelect = document.getElementById("month");
 const daySelect = document.getElementById("day");
 
+yearSelect.addEventListener("change", ()=> {
+    alterDateText(monthSelect, daySelect, yearSelect, dateText);
+})
+monthSelect.addEventListener("change", ()=> {
+    alterDateText(monthSelect, daySelect, yearSelect, dateText);
+})
+daySelect.addEventListener("change", ()=> {
+    alterDateText(monthSelect, daySelect, yearSelect, dateText);
+})
+
 const months = ['January', 'February', 'March', 'April', 
 'May', 'June', 'July', 'August', 'September', 'October',
 'November', 'December'];
@@ -87,3 +97,18 @@ monthSelect.onchange = function() {
 daySelect.onchange = function() {
     previousDay = daySelect.value;
 }
+
+
+
+
+//////////////////////////////////////////////////// other stuff involving the dropdown but are not actually part of the dropdown menu
+
+var dateText = document.getElementById("date");
+
+function alterDateText(month, day, year, text) {
+
+    const date = `Date Selected: ${month.value} ${day.value} ${year.value}`
+
+    text.innerHTML = date;
+}
+

@@ -38,12 +38,11 @@ function draw() {
 
         graph.update();
         graph.display();
+
     }
 
-
-
     setGraph();
-    setDescriptiontext();
+    setDescriptiontext();    
 }
 
 var currentlySelectedYear = 0;
@@ -65,8 +64,22 @@ function setDescriptiontext() {
 
         viewerText = `On ${date}, the world showed a happiness score of ${happinessScore}.
         The world was ${determineHappiness(happinessScore)}.`;
+
+        push();
+
+            noFill();
+
+            textAlign(RIGHT);
+            textSize(15);
+
+            stroke(161, 170, 39, 200);
+
+            text(viewerText, innerWidth - 450, 50);
+
+        pop();
     }    
 }
+
 
 function determineHappiness(value) {
 
@@ -125,26 +138,31 @@ function findIndexOfDate() {
 
     var daysPerMonth = [];
 
-    var index = 0; // used for finding the index of the dataPoint we want to look at
-
-
     for (let i = 1; i <= 12; i++) {
 
-        if (i % 2 == 1)
-            daysPerMonth.push(31);
-        else if (i == 2) {
-            const currentlySelectedYearToInt = parseInt(currentlySelectedYear, 10);
+        if (i <= 7) { // nested if statements sigh
+
+            if (i % 2 == 1)
+                daysPerMonth.push(31);
+            else if (i == 2) {
+                const currentlySelectedYearToInt = parseInt(currentlySelectedYear, 10);
             if (currentlySelectedYearToInt % 4 != 0)
                 daysPerMonth.push(28);
             else
                 daysPerMonth.push(29);
         }
-        else 
-            daysPerMonth.push(30);
+            else
+                daysPerMonth.push(30);
+        }
+        else {
 
+            if (i % 2 == 0)
+                daysPerMonth.push(31);
+            else 
+                daysPerMonth.push(30);
+
+        }
     }
-    
-
 
     // month and day
 
@@ -152,15 +170,25 @@ function findIndexOfDate() {
     const currentlySelectedMonthToInt = convertMonthStringToNum(currentlySelectedMonth);
 
     currentlySelectedDay = daySelect.value;
-    const currentlySelectedDayToInt = parseInt(currentlySelectedDay, 10); // we have to subtract 1 because we're doing indexess
-        
-    for (let i = 1; i <= currentlySelectedMonthToInt; i++) {
+    const currentlySelectedDayToInt = parseInt(currentlySelectedDay, 10); 
 
-        if (i == 12)
-            index = -30; // this is to account for the data points plotted between december and january
+    var index = (currentYearArray.length == years.yr2023.length) ? -1 : 30;  // used for finding the index of the dataPoint we want to look at, accounts for the incomplete data on yr 2023 graph too
 
-        (i == currentlySelectedMonthToInt) ? index += daysPerMonth[i - 1] + (currentlySelectedDayToInt - 1) : index += daysPerMonth[i - 1];
-    }
+    for (let i = 0; i < currentlySelectedMonthToInt; i++) {
+
+        if (i + 1 == currentlySelectedMonthToInt && i == 0) { // if only january selected
+
+            index += currentlySelectedDayToInt;
+        }
+        else if (i + 1 == currentlySelectedMonthToInt && i == 11) {
+
+            index = currentlySelectedDayToInt - 1;
+        }
+        else {
+
+            index += (i == currentlySelectedMonthToInt - 1) ? currentlySelectedDayToInt : daysPerMonth[i]; 
+        }
+    } 
 
     return index;
 }

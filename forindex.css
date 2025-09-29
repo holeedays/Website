@@ -191,25 +191,47 @@ main {
 
 
   display:flex;
+  flex-wrap: wrap;
+
   justify-content: center;
 
   text-align:center;
 }
 
 #profile_link {
+  height: 2%;
   text-decoration: none;
+  padding-right: 100px;
 
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
   color: black;
-  font-size: 30px;
+  font-size: 25px;
   font-style: italic;
 
   transition: color 0.3s ease;
 }
 
+#misc_link {
+  height: 2%;
+
+  text-decoration: none;
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  color: black;
+  font-size: 25px;
+  font-style: italic;
+
+  transition: color 0.3s ease;
+}
+
+#misc_link:hover {
+  color: rgb(153, 0, 255);
+}
+
 #profile_link:hover {
-  color: white;
+  color: rgb(255, 123, 0);
 }
 
 .profile_image {
